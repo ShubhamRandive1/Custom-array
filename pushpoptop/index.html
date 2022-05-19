@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custome array</title>
+  </head>
+  <body>
+    <h1> Push Pop Size Print Top Reverse</h1>
+
+  </body>
+</html>
+<script>
+  function myArray() {
+    Object.defineProperty(this, "length", {
+      value: 0,
+      writable: true,
+      enumerable: false,
+    });
+    this.length = arguments.length;
+    for (let i = 0; i < this.length; i++) {
+      this[i] = arguments[i];
+    }
+  }
+  let arr = new myArray(1,2,3,4,5,6);
+
+  //add changed
+  myArray.prototype.धक्का = function (value) {
+    let index = this.length;
+    this[index] = value;
+    this.length++;
+  };
+
+  //remove changed
+  myArray.prototype.पॉप = function () {
+    let index = this.length - 1;
+    delete this[index];
+    this.length--;
+  };
+
+// top changed
+myArray.prototype.वरती = function () {
+    let index = this.length - 1;
+    return this[index];
+  };
+
+//print पॉप the पॉप
+myArray.prototype.झेरॉक्स = function () {
+    ans=""
+    for (let i = 0; i < this.length; i++) {
+     ans += this[i]+" ";
+    // return ans;
+    }
+    return ans;
+  };
+
+//print reverse orde changed
+myArray.prototype.उलटे = function () {
+    ans=""
+    for (let i = this.length - 1; i >= 0; i--) {
+     ans += this[i]+" ";
+    }
+    return ans;
+  };
+
+//size changed
+myArray.prototype.आकार = function () {
+   return this.length-1;
+  };
+
+
+  arr.धक्का(1);
+  arr.धक्का(6);
+  arr.पॉप();
+  let x=arr.वरती(); 
+  let y=arr.आकार();
+  let z=arr.झेरॉक्स();
+  let k=arr.उलटे();
+  console.log("Custome Array", Object.values(arr),z,k);
+</script>
