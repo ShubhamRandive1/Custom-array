@@ -1,5 +1,5 @@
 # Custom-array
-added function to customised the array inbuild functions like push,pop,top,reverse in native language
+added function to customised the array inbuild functions like push,pop,top,reverse in native language(Marathi)
 
 customised functions in marathi language
 
